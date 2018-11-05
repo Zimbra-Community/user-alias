@@ -107,6 +107,8 @@ public class userAlias extends DocumentHandler {
             switch (request.getAttribute("action")) {
                 case "getAllowedAlias":
                     return getAllowedAlias(request, response, username, COS);
+                case "getAlias":
+                    return getAlias(request, response, username, COS);
                 case "createAlias":
                     if (checkPermission(username, COS, request.getAttribute("alias")) && validEmail(request.getAttribute("alias")) && validEmail(username)) {
                         response.setText(runCommand("/usr/local/sbin/add-alias", username, request.getAttribute("alias")));
@@ -136,6 +138,14 @@ public class userAlias extends DocumentHandler {
         return response;
     }
 
+    /**
+     * List the users current Alias'es and permissions, so the Zimlet knows what Alias domains are available to modify
+     */
+    private Element getAlias(Element request, Element response, String username, String cos) {
+        response.setText(getAlias(username, cos));
+        return response;
+    }
+
     /*Alias Limit is only enforced in the Zimlet*/
     public static boolean checkPermission(String username, String cos, String alias) {
         try {
@@ -146,6 +156,11 @@ public class userAlias extends DocumentHandler {
             String[] allowedByCOS = null;
             try {
                 allowedByCOS = prop.getProperty(cos).split(",");
+            } catch (Exception e) {
+            }
+            String[] allowedByUsernameDomains = null;
+            try {
+                allowedByUsernameDomains = prop.getProperty("allowUserDomains").split(",");
             } catch (Exception e) {
             }
             String[] allowedByUsername = null;
@@ -162,8 +177,10 @@ public class userAlias extends DocumentHandler {
 
             try {
                 if (Arrays.asList(allowedByUsername).contains(username)) {
-                    System.out.print(username + " allowed to create alias for " + alias + " based on allowUser directive.\r\n");
-                    return true;
+                    if (Arrays.asList(allowedByUsernameDomains).contains(getDomainByEmail(alias))) {
+                        System.out.print(username + " allowed to create alias for " + alias + " based on allowUser directive.\r\n");
+                        return true;
+                    }
                 }
             } catch (Exception e) {
             }
@@ -205,6 +222,13 @@ public class userAlias extends DocumentHandler {
                 allowedByCOS = prop.getProperty(cos).split(",");
             } catch (Exception e) {
             }
+
+            String[] allowedByUsernameDomains = null;
+            try {
+                allowedByUsernameDomains = prop.getProperty("allowUserDomains").split(",");
+            } catch (Exception e) {
+            }
+
             String[] allowedByUsername = new String[0];
             try {
                 allowedByUsername = prop.getProperty("allowUser").split(",");
@@ -217,18 +241,22 @@ public class userAlias extends DocumentHandler {
             } catch (Exception e) {
             }
 
-            try {
-                if (Arrays.asList(allowedByUsername).contains(username)) {
-                    return aliasLimit + ",*";
-                }
-            } catch (Exception e) {
-            }
-
-            return aliasLimit + "," + String.join(",", allowedByCOS) + "," + String.join(",", allowedByDomain);
+            return aliasLimit + "," + String.join(",", allowedByCOS) + "," + String.join(",", allowedByDomain)+ "," + String.join(",", allowedByUsernameDomains);
         } catch (Exception e) {
             e.printStackTrace();
             return "";
         }
+    }
+
+    public static String getAlias(String username, String cos) {
+        try {
+            return runCommand("/usr/local/sbin/get-alias", username, "");
+        }
+        catch (Exception e)
+        {
+            return "";
+        }
+
     }
 
     public static String getDomainByEmail(final String email) {
@@ -249,7 +277,7 @@ public class userAlias extends DocumentHandler {
         return matcher.find();
     }
 
-    private String runCommand(String cmd, String arg1, String arg2) throws ServiceException {
+    private static String runCommand(String cmd, String arg1, String arg2) throws ServiceException {
         try {
             ProcessBuilder pb = new ProcessBuilder()
                     .command(cmd, arg1, arg2)
@@ -262,7 +290,7 @@ public class userAlias extends DocumentHandler {
             String aux = "";
             while ((aux = cmdOutputBuffer.readLine()) != null) {
                 builder.append(aux);
-                builder.append(';');
+                //builder.append(';');
             }
             String cmdResult = builder.toString();
             return cmdResult;

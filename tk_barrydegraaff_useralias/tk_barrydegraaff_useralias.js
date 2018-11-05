@@ -82,21 +82,7 @@ UserAliasZimletPrefs = function(shell, section, controller, handler) {
    
    this.showMe = function()
    {
-      document.getElementById('zb__PREF__SAVE').style='display:none';
-      document.title = "Zimbra: " + ZmMsg.preferences +": Alias";
-      document.getElementById('tk_barrydegraaff_useralias_prefscreen').style='display:block';
-      document.getElementById('tk_barrydegraaff_useralias_prefscreen').innerHTML = "<h2 class='prefHeader'>Current Alias</h2><div id='tk_barrydegraaff_useralias_prefscreen_currentAlias'></div><h2 class='prefHeader'>Permissions</h2><div id='tk_barrydegraaff_useralias_prefscreen_permissions'></div><h2 class='prefHeader'>Add alias</h2><div id='tk_barrydegraaff_useralias_addAlias'></div>";
-      
-      var soapDoc = AjxSoapDoc.create("userAlias", "urn:userAlias", null);
-      var params = {
-         soapDoc: soapDoc,
-         asyncMode: true,
-         callback:UserAliasZimlet.prototype.displayPerms
-      };
-      soapDoc.getMethod().setAttribute("action", "getAllowedAlias");
-      appCtxt.getAppController().sendRequest(params);
-      
-      return;
+      UserAliasZimlet.prototype.showMeImpl();
    };
    
    this.getTabGroupMember = function(){return;};
@@ -107,29 +93,135 @@ UserAliasZimletPrefs = function(shell, section, controller, handler) {
    ZmPreferencesPage.call(this, shell, section, controller);
 };
 
+UserAliasZimlet.prototype.showMeImpl = function()
+{
+   document.getElementById('zb__PREF__SAVE').style='display:none';
+   document.title = "Zimbra: " + ZmMsg.preferences +": Alias";
+   document.getElementById('tk_barrydegraaff_useralias_prefscreen').style='display:block';
+   document.getElementById('tk_barrydegraaff_useralias_prefscreen').innerHTML = "<h2 class='prefHeader'>Current Alias</h2><div id='tk_barrydegraaff_useralias_prefscreen_currentAlias'></div><h2 class='prefHeader'>Permissions</h2><div id='tk_barrydegraaff_useralias_prefscreen_permissions'></div><h2 class='prefHeader'>Add alias</h2><div id='tk_barrydegraaff_useralias_addAlias'><input type='text' placeholder='alias' id='tk_barrydegraaff_useralias_newAlias'>@<select id='tk_barrydegraaff_useralias_newAliasDomain'></select><button onclick='UserAliasZimlet.prototype.addAlias()'>add</button></div>";
+   
+   var soapDoc = AjxSoapDoc.create("userAlias", "urn:userAlias", null);
+   var params = {
+      soapDoc: soapDoc,
+      asyncMode: true,
+      callback:UserAliasZimlet.prototype.displayPerms
+   };
+   soapDoc.getMethod().setAttribute("action", "getAllowedAlias");
+   appCtxt.getAppController().sendRequest(params);
+   
+   var soapDoc = AjxSoapDoc.create("userAlias", "urn:userAlias", null);
+   var params = {
+      soapDoc: soapDoc,
+      asyncMode: true,
+      callback:UserAliasZimlet.prototype.displayAlias
+   };
+   soapDoc.getMethod().setAttribute("action", "getAlias");
+   appCtxt.getAppController().sendRequest(params);
+   
+   return;   
+};
+
 UserAliasZimlet.prototype.displayPerms = function(result)
 {
    try{
    var result = result._data.response._content.split(",");
-   console.log(result);
-   if(result[1]=="*")
-   {
-      document.getElementById('tk_barrydegraaff_useralias_prefscreen_permissions').innerHTML = "You are allowed to create alias in all domains on this server.";
-   }
-   else
-   {
-      document.getElementById('tk_barrydegraaff_useralias_prefscreen_permissions').innerHTML = "You are allowed to create alias in the following domains:<br><br>";
-      var i;
-      for (i = 1; i < result.length; i++) { 
-         document.getElementById('tk_barrydegraaff_useralias_prefscreen_permissions').innerHTML += result[i] + "<br>";
+   document.getElementById('tk_barrydegraaff_useralias_prefscreen_permissions').innerHTML = "You are allowed to create alias in the following domains:<br><br>";
+   var i;
+   for (i = 1; i < result.length; i++) { 
+      if(result[i].length > 0)
+      {
+         document.getElementById('tk_barrydegraaff_useralias_prefscreen_permissions').innerHTML += result[i] + "<br>";      
+         var option = document.createElement("option");
+         option.text = result[i];
+         option.value = "@"+result[i];
+         var select = document.getElementById("tk_barrydegraaff_useralias_newAliasDomain");
+         select.appendChild(option);
       }
-         
-   }   
-   document.getElementById('tk_barrydegraaff_useralias_prefscreen_permissions').innerHTML += "Maximum number of alias allowed on this account: " + result[0];
+   }
+
+   document.getElementById('tk_barrydegraaff_useralias_prefscreen_permissions').innerHTML += "<br>Maximum number of alias allowed on your account: " + result[0];
    
    
    } catch (err)
    {
       document.getElementById('tk_barrydegraaff_useralias_prefscreen_permissions').innerHTML = err;
    }
+};
+
+UserAliasZimlet.prototype.displayAlias = function(result)
+{
+   try{
+   var result = result._data.response._content.split(",");
+
+   document.getElementById('tk_barrydegraaff_useralias_prefscreen_currentAlias').innerHTML = "These addresses are currently configured as alias on your account, mail sent to these addresses will be delivered to your mailbox:<br><br>";
+
+   var i;
+   var added = false;
+   for (i = 0; i < result.length; i++) { 
+      if(result[i].length > 0)
+      {      
+         document.getElementById('tk_barrydegraaff_useralias_prefscreen_currentAlias').innerHTML += result[i] + " <a style=\"text-decoration:underline !important; color: blue !important; cursor:pointer\" onclick=\"UserAliasZimlet.prototype.removeAlias('"+result[i]+"') \">remove</a><br>";
+         added = true;
+      }   
+   }
+   
+   if(!added)
+   {
+      document.getElementById('tk_barrydegraaff_useralias_prefscreen_currentAlias').innerHTML = 'There is no alias configured on your account. Add an alias to receive email on additional addresses.<br>'
+   }
+   
+   } catch (err)
+   {
+      document.getElementById('tk_barrydegraaff_useralias_prefscreen_currentAlias').innerHTML = err;
+   }
+};
+
+UserAliasZimlet.prototype.removeAlias = function(alias)
+{
+      var soapDoc = AjxSoapDoc.create("userAlias", "urn:userAlias", null);
+      var params = {
+         soapDoc: soapDoc,
+         asyncMode: true,
+         callback:UserAliasZimlet.prototype.displayResult
+      };
+      soapDoc.getMethod().setAttribute("action", "removeAlias");
+      soapDoc.getMethod().setAttribute("alias", alias);
+      appCtxt.getAppController().sendRequest(params);
+};
+
+UserAliasZimlet.prototype.addAlias = function()
+{
+   var alias = document.getElementById('tk_barrydegraaff_useralias_newAlias').value+document.getElementById('tk_barrydegraaff_useralias_newAliasDomain').value;
+      var soapDoc = AjxSoapDoc.create("userAlias", "urn:userAlias", null);
+      var params = {
+         soapDoc: soapDoc,
+         asyncMode: true,
+         callback:UserAliasZimlet.prototype.displayResult
+      };
+      soapDoc.getMethod().setAttribute("action", "createAlias");
+      soapDoc.getMethod().setAttribute("alias", alias);
+      appCtxt.getAppController().sendRequest(params);
+};
+
+UserAliasZimlet.prototype.displayResult = function(result)
+{
+   console.log(result);
+   result = result._data.response._content;
+   console.log(result);
+   
+   if(result=="end of command")
+   {
+      UserAliasZimlet.prototype.status('OK', ZmStatusView.LEVEL_INFO);
+   } 
+   else
+   {
+      var zimletInstance = appCtxt._zimletMgr.getZimletByName('tk_barrydegraaff_useralias').handlerObject;
+      zimletInstance.displayErrorMessage(
+         result.replace("end of command",""),
+         undefined,
+         "Server Result"
+      );
+   }   
+     
+   UserAliasZimlet.prototype.showMeImpl();
 };

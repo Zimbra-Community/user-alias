@@ -33,5 +33,5 @@ echo ""
 exit 1
 fi
 
-/opt/zimbra/bin/zmprov raa $1 $2
+/opt/zimbra/bin/zmprov -l raa $1 $2
 echo "end of command"

@@ -41,6 +41,8 @@ mkdir -p /opt/zimbra/lib/ext/userAlias
 cp extension/out/artifacts/userAlias_jar/userAlias.jar /opt/zimbra/lib/ext/userAlias/
 cp config.properties /opt/zimbra/lib/ext/userAlias/
 
+cp bin/* /usr/local/sbin/
+
 rm -Rf $TMPFOLDER
 
 

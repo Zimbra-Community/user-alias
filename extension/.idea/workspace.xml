@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="7a14ed73-6c4d-43a0-8b74-303ecab88e3d" name="Default Changelist" comment="" />
+    <list default="true" id="7a14ed73-6c4d-43a0-8b74-303ecab88e3d" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/src/tk/barrydegraaff/userAlias/userAlias.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/tk/barrydegraaff/userAlias/userAlias.java" afterDir="false" />
+    </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -48,6 +50,16 @@
           <entry key="project.opened" value="1" />
         </counts>
       </usages-collector>
+      <usages-collector id="statistics.file.extensions.edit">
+        <counts>
+          <entry key="java" value="121" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.types.edit">
+        <counts>
+          <entry key="JAVA" value="121" />
+        </counts>
+      </usages-collector>
     </session>
   </component>
   <component name="FileEditorManager">
@@ -55,8 +67,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/tk/barrydegraaff/userAlias/userAlias.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="641">
-              <caret line="196" column="104" selection-start-line="196" selection-start-column="57" selection-end-line="196" selection-end-column="104" />
+            <state relative-caret-position="180">
+              <caret line="283" selection-start-line="283" selection-end-line="283" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -81,7 +93,7 @@
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="7">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="width" value="1930" />
     <option name="height" value="1050" />
   </component>
@@ -188,8 +200,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-6" y="0" width="1932" height="1054" extended-state="7" />
-    <editor active="true" />
+    <frame x="-6" y="0" width="1932" height="1054" extended-state="6" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.25106838" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -201,7 +212,7 @@
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
       <window_info anchor="bottom" id="Run" order="2" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.22903226" />
+      <window_info active="true" anchor="bottom" id="Debug" order="3" visible="true" weight="0.22826087" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
@@ -227,317 +238,32 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/tk/barrydegraaff/userAlias/userAlias.java</url>
-          <line>134</line>
-          <properties />
-          <option name="timeStamp" value="9" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/tk/barrydegraaff/userAlias/userAlias.java</url>
-          <line>135</line>
-          <properties />
-          <option name="timeStamp" value="10" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/tk/barrydegraaff/userAlias/userAlias.java</url>
-          <line>110</line>
-          <properties />
-          <option name="timeStamp" value="11" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/tk/barrydegraaff/userAlias/userAlias.java</url>
-          <line>111</line>
-          <properties />
-          <option name="timeStamp" value="12" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/tk/barrydegraaff/userAlias/userAlias.java</url>
-          <line>112</line>
-          <properties />
-          <option name="timeStamp" value="13" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/tk/barrydegraaff/userAlias/userAlias.java</url>
           <line>113</line>
           <properties />
-          <option name="timeStamp" value="14" />
+          <option name="timeStamp" value="64" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/tk/barrydegraaff/userAlias/userAlias.java</url>
-          <line>140</line>
+          <line>281</line>
           <properties />
-          <option name="timeStamp" value="15" />
+          <option name="timeStamp" value="66" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/tk/barrydegraaff/userAlias/userAlias.java</url>
-          <line>141</line>
+          <line>282</line>
           <properties />
-          <option name="timeStamp" value="16" />
+          <option name="timeStamp" value="67" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/tk/barrydegraaff/userAlias/userAlias.java</url>
-          <line>142</line>
+          <line>283</line>
           <properties />
-          <option name="timeStamp" value="17" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/tk/barrydegraaff/userAlias/userAlias.java</url>
-          <line>143</line>
-          <properties />
-          <option name="timeStamp" value="18" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/tk/barrydegraaff/userAlias/userAlias.java</url>
-          <line>188</line>
-          <properties />
-          <option name="timeStamp" value="19" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/tk/barrydegraaff/userAlias/userAlias.java</url>
-          <line>181</line>
-          <properties />
-          <option name="timeStamp" value="20" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/tk/barrydegraaff/userAlias/userAlias.java</url>
-          <line>165</line>
-          <properties />
-          <option name="timeStamp" value="22" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/tk/barrydegraaff/userAlias/userAlias.java</url>
-          <line>189</line>
-          <properties />
-          <option name="timeStamp" value="23" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/tk/barrydegraaff/userAlias/userAlias.java</url>
-          <line>145</line>
-          <properties />
-          <option name="timeStamp" value="24" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/tk/barrydegraaff/userAlias/userAlias.java</url>
-          <line>146</line>
-          <properties />
-          <option name="timeStamp" value="25" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/tk/barrydegraaff/userAlias/userAlias.java</url>
-          <line>147</line>
-          <properties />
-          <option name="timeStamp" value="26" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/tk/barrydegraaff/userAlias/userAlias.java</url>
-          <line>148</line>
-          <properties />
-          <option name="timeStamp" value="27" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/tk/barrydegraaff/userAlias/userAlias.java</url>
-          <line>149</line>
-          <properties />
-          <option name="timeStamp" value="28" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/tk/barrydegraaff/userAlias/userAlias.java</url>
-          <line>151</line>
-          <properties />
-          <option name="timeStamp" value="29" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/tk/barrydegraaff/userAlias/userAlias.java</url>
-          <line>152</line>
-          <properties />
-          <option name="timeStamp" value="30" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/tk/barrydegraaff/userAlias/userAlias.java</url>
-          <line>154</line>
-          <properties />
-          <option name="timeStamp" value="31" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/tk/barrydegraaff/userAlias/userAlias.java</url>
-          <line>150</line>
-          <properties />
-          <option name="timeStamp" value="32" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/tk/barrydegraaff/userAlias/userAlias.java</url>
-          <line>153</line>
-          <properties />
-          <option name="timeStamp" value="33" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/tk/barrydegraaff/userAlias/userAlias.java</url>
-          <line>156</line>
-          <properties />
-          <option name="timeStamp" value="34" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/tk/barrydegraaff/userAlias/userAlias.java</url>
-          <line>157</line>
-          <properties />
-          <option name="timeStamp" value="35" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/tk/barrydegraaff/userAlias/userAlias.java</url>
-          <line>158</line>
-          <properties />
-          <option name="timeStamp" value="36" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/tk/barrydegraaff/userAlias/userAlias.java</url>
-          <line>159</line>
-          <properties />
-          <option name="timeStamp" value="37" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/tk/barrydegraaff/userAlias/userAlias.java</url>
-          <line>160</line>
-          <properties />
-          <option name="timeStamp" value="38" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/tk/barrydegraaff/userAlias/userAlias.java</url>
-          <line>162</line>
-          <properties />
-          <option name="timeStamp" value="39" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/tk/barrydegraaff/userAlias/userAlias.java</url>
-          <line>163</line>
-          <properties />
-          <option name="timeStamp" value="40" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/tk/barrydegraaff/userAlias/userAlias.java</url>
-          <line>164</line>
-          <properties />
-          <option name="timeStamp" value="41" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/tk/barrydegraaff/userAlias/userAlias.java</url>
-          <line>166</line>
-          <properties />
-          <option name="timeStamp" value="42" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/tk/barrydegraaff/userAlias/userAlias.java</url>
-          <line>167</line>
-          <properties />
-          <option name="timeStamp" value="43" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/tk/barrydegraaff/userAlias/userAlias.java</url>
-          <line>168</line>
-          <properties />
-          <option name="timeStamp" value="44" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/tk/barrydegraaff/userAlias/userAlias.java</url>
-          <line>170</line>
-          <properties />
-          <option name="timeStamp" value="45" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/tk/barrydegraaff/userAlias/userAlias.java</url>
-          <line>171</line>
-          <properties />
-          <option name="timeStamp" value="46" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/tk/barrydegraaff/userAlias/userAlias.java</url>
-          <line>172</line>
-          <properties />
-          <option name="timeStamp" value="47" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/tk/barrydegraaff/userAlias/userAlias.java</url>
-          <line>174</line>
-          <properties />
-          <option name="timeStamp" value="48" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/tk/barrydegraaff/userAlias/userAlias.java</url>
-          <line>173</line>
-          <properties />
-          <option name="timeStamp" value="49" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/tk/barrydegraaff/userAlias/userAlias.java</url>
-          <line>175</line>
-          <properties />
-          <option name="timeStamp" value="50" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/tk/barrydegraaff/userAlias/userAlias.java</url>
-          <line>176</line>
-          <properties />
-          <option name="timeStamp" value="51" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/tk/barrydegraaff/userAlias/userAlias.java</url>
-          <line>178</line>
-          <properties />
-          <option name="timeStamp" value="52" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/tk/barrydegraaff/userAlias/userAlias.java</url>
-          <line>179</line>
-          <properties />
-          <option name="timeStamp" value="53" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/tk/barrydegraaff/userAlias/userAlias.java</url>
-          <line>180</line>
-          <properties />
-          <option name="timeStamp" value="54" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/tk/barrydegraaff/userAlias/userAlias.java</url>
-          <line>182</line>
-          <properties />
-          <option name="timeStamp" value="55" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/tk/barrydegraaff/userAlias/userAlias.java</url>
-          <line>183</line>
-          <properties />
-          <option name="timeStamp" value="56" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/tk/barrydegraaff/userAlias/userAlias.java</url>
-          <line>184</line>
-          <properties />
-          <option name="timeStamp" value="57" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/tk/barrydegraaff/userAlias/userAlias.java</url>
-          <line>186</line>
-          <properties />
-          <option name="timeStamp" value="58" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/tk/barrydegraaff/userAlias/userAlias.java</url>
-          <line>187</line>
-          <properties />
-          <option name="timeStamp" value="59" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/tk/barrydegraaff/userAlias/userAlias.java</url>
-          <line>190</line>
-          <properties />
-          <option name="timeStamp" value="60" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/tk/barrydegraaff/userAlias/userAlias.java</url>
-          <line>191</line>
-          <properties />
-          <option name="timeStamp" value="61" />
+          <option name="timeStamp" value="68" />
         </line-breakpoint>
       </breakpoints>
+      <breakpoints-dialog>
+        <breakpoints-dialog />
+      </breakpoints-dialog>
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
@@ -550,8 +276,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/tk/barrydegraaff/userAlias/userAlias.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="641">
-          <caret line="196" column="104" selection-start-line="196" selection-start-column="57" selection-end-line="196" selection-end-column="104" />
+        <state relative-caret-position="180">
+          <caret line="283" selection-start-line="283" selection-end-line="283" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
