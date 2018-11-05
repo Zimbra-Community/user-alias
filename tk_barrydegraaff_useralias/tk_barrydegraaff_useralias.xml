@@ -1,0 +1,9 @@
+<zimlet name="tk_barrydegraaff_useralias"
+        version="0.0.1"
+        target="main compose-window view-window"
+        label="User Alias"
+        description="Allows end-user to create email alias.">
+    <include>tk_barrydegraaff_useralias.js</include>
+    <include>templates/preferences.template.js</include>
+   <handlerObject>tk_barrydegraaff_useralias_HandlerObject</handlerObject>   
+</zimlet>
