@@ -35,11 +35,11 @@ cd $TMPFOLDER
 git clone --depth=1 https://github.com/Zimbra-Community/user-alias
 cd user-alias
 
-rm -Rf /opt/zimbra/lib/ext/user-alias
-mkdir -p /opt/zimbra/lib/ext/user-alias
+rm -Rf /opt/zimbra/lib/ext/userAlias
+mkdir -p /opt/zimbra/lib/ext/userAlias
 
-cp extension/out/artifacts/userAlias_jar/userAlias.jar /opt/zimbra/lib/ext/user-alias/
-cp config.properties /opt/zimbra/lib/ext/user-alias/
+cp extension/out/artifacts/userAlias_jar/userAlias.jar /opt/zimbra/lib/ext/userAlias/
+cp config.properties /opt/zimbra/lib/ext/userAlias/
 
 rm -Rf $TMPFOLDER
 

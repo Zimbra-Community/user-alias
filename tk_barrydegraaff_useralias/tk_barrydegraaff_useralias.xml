@@ -4,6 +4,6 @@
         label="User Alias"
         description="Allows end-user to create email alias.">
     <include>tk_barrydegraaff_useralias.js</include>
-    <include>templates/preferences.template.js</include>
+    <includeCSS>tk_barrydegraaff_useralias.css</includeCSS>
    <handlerObject>tk_barrydegraaff_useralias_HandlerObject</handlerObject>   
 </zimlet>
