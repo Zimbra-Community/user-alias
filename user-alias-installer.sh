@@ -21,9 +21,6 @@ set -e
 # if you want to trace your script uncomment the following line
 # set -x
 
-echo "This is a development script, do not run it in prod. Hit enter, if you want to continue running this script, or CTRL+C  to abort";
-read dum;
-
 # Make sure only root can run our script
 if [ "$(id -u)" != "0" ]; then
    echo "This script must be run as root" 1>&2
