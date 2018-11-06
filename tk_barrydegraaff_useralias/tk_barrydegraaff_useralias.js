@@ -205,9 +205,7 @@ UserAliasZimlet.prototype.addAlias = function()
 
 UserAliasZimlet.prototype.displayResult = function(result)
 {
-   console.log(result);
    result = result._data.response._content;
-   console.log(result);
    
    if(result=="end of command")
    {

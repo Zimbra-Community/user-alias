@@ -108,25 +108,35 @@ public class userAlias extends DocumentHandler {
                 case "getAllowedAlias":
                     return getAllowedAlias(request, response, username, COS);
                 case "getAlias":
-                    return getAlias(request, response, username, COS);
+                    String[] alias = acct.getMailAlias();
+                    //return getAlias(request, response, username, COS);
+                    response.setText(String.join(",", alias));
+                    break;
                 case "createAlias":
                     if (checkPermission(username, COS, request.getAttribute("alias")) && validEmail(request.getAttribute("alias")) && validEmail(username)) {
-                        response.setText(runCommand("/usr/local/sbin/add-alias", username, request.getAttribute("alias")));
+                        response.setText("end of command");
+                        Provisioning prov = Provisioning.getInstance();
+                        prov.addAlias(acct, request.getAttribute("alias"));
+                        break;
                     } else {
-                        response.setText("Permission denied");
+                        response.setText("Permission denied or wrong email address");
+                        break;
                     }
                 case "removeAlias":
                     if (checkPermission(username, COS, request.getAttribute("alias")) && validEmail(request.getAttribute("alias")) && validEmail(username)) {
-                        response.setText(runCommand("/usr/local/sbin/remove-alias", username, request.getAttribute("alias")));
+                        response.setText("end of command");
+                        Provisioning prov = Provisioning.getInstance();
+                        prov.removeAlias(acct, request.getAttribute("alias"));
+                        break;
                     } else {
-                        response.setText("Permission denied");
+                        response.setText("Permission denied or wrong email address");
+                        break;
                     }
-                default:
-                    return (response);
             }
+            return (response);
         } catch (
                 Exception e) {
-            throw ServiceException.FAILURE("exception occurred handling command", e);
+            throw ServiceException.FAILURE(e.toString(), e);
         }
     }
 
@@ -135,14 +145,6 @@ public class userAlias extends DocumentHandler {
      */
     private Element getAllowedAlias(Element request, Element response, String username, String cos) {
         response.setText(getAllowedAlias(username, cos));
-        return response;
-    }
-
-    /**
-     * List the users current Alias'es and permissions, so the Zimlet knows what Alias domains are available to modify
-     */
-    private Element getAlias(Element request, Element response, String username, String cos) {
-        response.setText(getAlias(username, cos));
         return response;
     }
 
@@ -229,34 +231,17 @@ public class userAlias extends DocumentHandler {
             } catch (Exception e) {
             }
 
-            String[] allowedByUsername = new String[0];
-            try {
-                allowedByUsername = prop.getProperty("allowUser").split(",");
-            } catch (Exception e) {
-            }
-
             String[] allowedByDomain = new String[0];
             try {
                 allowedByDomain = prop.getProperty(getDomainByEmail(username)).split(",");
             } catch (Exception e) {
             }
 
-            return aliasLimit + "," + String.join(",", allowedByCOS) + "," + String.join(",", allowedByDomain)+ "," + String.join(",", allowedByUsernameDomains);
+            return aliasLimit + "," + String.join(",", allowedByCOS) + "," + String.join(",", allowedByDomain) + "," + String.join(",", allowedByUsernameDomains);
         } catch (Exception e) {
             e.printStackTrace();
             return "";
         }
-    }
-
-    public static String getAlias(String username, String cos) {
-        try {
-            return runCommand("/usr/local/sbin/get-alias", username, "");
-        }
-        catch (Exception e)
-        {
-            return "";
-        }
-
     }
 
     public static String getDomainByEmail(final String email) {
@@ -276,29 +261,4 @@ public class userAlias extends DocumentHandler {
         Matcher matcher = VALID_EMAIL_ADDRESS_REGEX.matcher(emailStr);
         return matcher.find();
     }
-
-    private static String runCommand(String cmd, String arg1, String arg2) throws ServiceException {
-        try {
-            ProcessBuilder pb = new ProcessBuilder()
-                    .command(cmd, arg1, arg2)
-                    .redirectErrorStream(true);
-            Process p = pb.start();
-
-            BufferedReader cmdOutputBuffer = new BufferedReader(new InputStreamReader(p.getInputStream()));
-
-            StringBuilder builder = new StringBuilder();
-            String aux = "";
-            while ((aux = cmdOutputBuffer.readLine()) != null) {
-                builder.append(aux);
-                //builder.append(';');
-            }
-            String cmdResult = builder.toString();
-            return cmdResult;
-
-        } catch (
-                Exception e) {
-            throw ServiceException.FAILURE("userAlias runCommand exception", e);
-        }
-    }
-
 }

@@ -2,6 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7a14ed73-6c4d-43a0-8b74-303ecab88e3d" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/../config.properties" beforeDir="false" afterPath="$PROJECT_DIR$/../config.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/userAlias_jar/userAlias.jar" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/userAlias_jar/userAlias.jar" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/tk/barrydegraaff/userAlias/userAlias.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/tk/barrydegraaff/userAlias/userAlias.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -46,18 +49,20 @@
     <session id="-1148855818">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
+          <entry key="project.closed" value="2" />
+          <entry key="project.open.time.11" value="2" />
           <entry key="project.open.time.2" value="1" />
-          <entry key="project.opened" value="1" />
+          <entry key="project.opened" value="3" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="java" value="121" />
+          <entry key="java" value="404" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="JAVA" value="121" />
+          <entry key="JAVA" value="404" />
         </counts>
       </usages-collector>
     </session>
@@ -67,8 +72,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/tk/barrydegraaff/userAlias/userAlias.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="180">
-              <caret line="283" selection-start-line="283" selection-end-line="283" />
+            <state relative-caret-position="671">
+              <caret line="112" column="61" selection-start-line="112" selection-start-column="61" selection-end-line="112" selection-end-column="61" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -103,6 +108,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -115,7 +121,6 @@
         </subPane>
       </pane>
       <pane id="Scope" />
-      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -201,8 +206,9 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-6" y="0" width="1932" height="1054" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.25106838" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.25747862" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -212,7 +218,7 @@
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
       <window_info anchor="bottom" id="Run" order="2" />
-      <window_info active="true" anchor="bottom" id="Debug" order="3" visible="true" weight="0.22826087" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.22826087" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
@@ -233,39 +239,6 @@
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
   </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/tk/barrydegraaff/userAlias/userAlias.java</url>
-          <line>113</line>
-          <properties />
-          <option name="timeStamp" value="64" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/tk/barrydegraaff/userAlias/userAlias.java</url>
-          <line>281</line>
-          <properties />
-          <option name="timeStamp" value="66" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/tk/barrydegraaff/userAlias/userAlias.java</url>
-          <line>282</line>
-          <properties />
-          <option name="timeStamp" value="67" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/tk/barrydegraaff/userAlias/userAlias.java</url>
-          <line>283</line>
-          <properties />
-          <option name="timeStamp" value="68" />
-        </line-breakpoint>
-      </breakpoints>
-      <breakpoints-dialog>
-        <breakpoints-dialog />
-      </breakpoints-dialog>
-    </breakpoint-manager>
-  </component>
   <component name="editorHistoryManager">
     <entry file="jar://$PROJECT_DIR$/lib/zimbrastore.jar!/com/zimbra/cs/account/Account.class">
       <provider selected="true" editor-type-id="text-editor">
@@ -276,8 +249,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/tk/barrydegraaff/userAlias/userAlias.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="283" selection-start-line="283" selection-end-line="283" />
+        <state relative-caret-position="671">
+          <caret line="112" column="61" selection-start-line="112" selection-start-column="61" selection-end-line="112" selection-end-column="61" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
