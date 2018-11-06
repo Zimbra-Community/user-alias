@@ -139,6 +139,8 @@ UserAliasZimlet.prototype.displayPerms = function(result)
       }
    }
 
+   var zimletInstance = appCtxt._zimletMgr.getZimletByName('tk_barrydegraaff_useralias').handlerObject;
+   zimletInstance.limit = result[0];
    document.getElementById('tk_barrydegraaff_useralias_prefscreen_permissions').innerHTML += "<br>Maximum number of alias allowed on your account: " + result[0];
    
    
@@ -157,12 +159,20 @@ UserAliasZimlet.prototype.displayAlias = function(result)
 
    var i;
    var added = false;
+   var numberOfAlias = 0;
    for (i = 0; i < result.length; i++) { 
       if(result[i].length > 0)
       {      
          document.getElementById('tk_barrydegraaff_useralias_prefscreen_currentAlias').innerHTML += result[i] + " <a style=\"text-decoration:underline !important; color: blue !important; cursor:pointer\" onclick=\"UserAliasZimlet.prototype.removeAlias('"+result[i]+"') \">remove</a><br>";
          added = true;
+         numberOfAlias++;
       }   
+   }
+
+   var zimletInstance = appCtxt._zimletMgr.getZimletByName('tk_barrydegraaff_useralias').handlerObject;
+   if(numberOfAlias >= zimletInstance.limit)
+   {
+      document.getElementById('tk_barrydegraaff_useralias_addAlias').innerHTML = 'Limit reached, remove some alias before adding new ones.'
    }
    
    if(!added)
