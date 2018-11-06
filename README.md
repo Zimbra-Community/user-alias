@@ -1,5 +1,5 @@
 # Zimbra User Alias
-With this extension you can allows a user, users in a cos or users in a domain to create Alias on their own account. For Zimbra 8.7.11 and above only. When adding/removing Alias, the Zimlet will also add/remove personas so the user is good to go!
+With this extension you can allow a user, users in a cos or users in a domain to create Alias on their own account. For Zimbra 8.7.11 and above only. When adding/removing Alias, the Zimlet will also add/remove personas so the user is good to go!
 
 ![Screenshot](https://raw.githubusercontent.com/Zimbra-Community/user-alias/master/documentation/screenshot.png)
 
