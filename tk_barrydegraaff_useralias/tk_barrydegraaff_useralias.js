@@ -178,20 +178,31 @@ UserAliasZimlet.prototype.displayAlias = function(result)
 
 UserAliasZimlet.prototype.removeAlias = function(alias)
 {
-      var soapDoc = AjxSoapDoc.create("userAlias", "urn:userAlias", null);
-      var params = {
-         soapDoc: soapDoc,
-         asyncMode: true,
-         callback:UserAliasZimlet.prototype.displayResult
-      };
-      soapDoc.getMethod().setAttribute("action", "removeAlias");
-      soapDoc.getMethod().setAttribute("alias", alias);
-      appCtxt.getAppController().sendRequest(params);
+   var personas = UserAliasZimlet.prototype.getPersona();
+   if(personas.includes(alias))
+   {
+      UserAliasZimlet.prototype.removePersona(alias);
+   }
+   var soapDoc = AjxSoapDoc.create("userAlias", "urn:userAlias", null);
+   var params = {
+      soapDoc: soapDoc,
+      asyncMode: true,
+      callback:UserAliasZimlet.prototype.displayResult
+   };
+   soapDoc.getMethod().setAttribute("action", "removeAlias");
+   soapDoc.getMethod().setAttribute("alias", alias);
+   appCtxt.getAppController().sendRequest(params);
 };
 
 UserAliasZimlet.prototype.addAlias = function()
 {
-   var alias = document.getElementById('tk_barrydegraaff_useralias_newAlias').value+document.getElementById('tk_barrydegraaff_useralias_newAliasDomain').value;
+   var alias = (document.getElementById('tk_barrydegraaff_useralias_newAlias').value+document.getElementById('tk_barrydegraaff_useralias_newAliasDomain').value).toLowerCase();
+   var personas = UserAliasZimlet.prototype.getPersona();
+   if(!personas.includes(alias))
+   {
+      UserAliasZimlet.prototype.createPersona(alias);
+   } 
+
       var soapDoc = AjxSoapDoc.create("userAlias", "urn:userAlias", null);
       var params = {
          soapDoc: soapDoc,
@@ -222,4 +233,64 @@ UserAliasZimlet.prototype.displayResult = function(result)
    }   
      
    UserAliasZimlet.prototype.showMeImpl();
+};
+
+UserAliasZimlet.prototype.createPersona = function(alias)
+{
+   var soapDoc = AjxSoapDoc.create("CreateIdentityRequest", "urn:zimbraAccount");
+   var identityNode = soapDoc.set("identity");
+   identityNode.setAttribute("name", alias);
+
+   var displayname = "";
+   if (appCtxt.get(ZmSetting.DISPLAY_NAME))
+   {
+      displayname = appCtxt.get(ZmSetting.DISPLAY_NAME);
+   }
+   else
+   {
+      displayname = alias;
+   } 
+   
+   var propertyNode = soapDoc.set("a", displayname, identityNode);
+   propertyNode.setAttribute("name", "zimbraPrefFromDisplay");
+   
+   var propertyNode = soapDoc.set("a", alias, identityNode);
+   propertyNode.setAttribute("name", "zimbraPrefFromAddress");
+   
+   var propertyNode = soapDoc.set("a", "sendAs", identityNode);
+   propertyNode.setAttribute("name", "zimbraPrefFromAddressType");
+   
+   var propertyNode = soapDoc.set("a", "FALSE", identityNode);
+   propertyNode.setAttribute("name", "zimbraPrefReplyToEnabled");
+   
+   var propertyNode = soapDoc.set("a", "TRUE", identityNode);
+   propertyNode.setAttribute("name", "zimbraPrefWhenSentToEnabled");
+   
+   var propertyNode = soapDoc.set("a", "FALSE", identityNode);
+   propertyNode.setAttribute("name", "zimbraPrefWhenInFoldersEnabled");
+   
+   var propertyNode = soapDoc.set("a", alias, identityNode);
+   propertyNode.setAttribute("name", "zimbraPrefWhenSentToAddresses");
+   
+   appCtxt.getAppController().sendRequest({soapDoc:soapDoc, asyncMode:true});
+};
+
+UserAliasZimlet.prototype.removePersona = function(alias)
+{
+   var soapDoc = AjxSoapDoc.create("DeleteIdentityRequest", "urn:zimbraAccount");
+   var identityNode = soapDoc.set("identity");
+   identityNode.setAttribute("name", alias);   
+   appCtxt.getAppController().sendRequest({soapDoc:soapDoc, asyncMode:true});
+};
+
+UserAliasZimlet.prototype.getPersona = function()
+{
+   var soapDoc = AjxSoapDoc.create("GetIdentitiesRequest", "urn:zimbraAccount");  
+   var personas = appCtxt.getAppController().sendRequest({soapDoc:soapDoc, asyncMode:false});
+
+   var personasResult = [];
+   personas.GetIdentitiesResponse.identity.forEach(function(persona) {
+      personasResult.push(persona.name);
+   });
+   return personasResult;
 };

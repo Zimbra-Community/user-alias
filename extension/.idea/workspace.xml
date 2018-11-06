@@ -1,12 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="7a14ed73-6c4d-43a0-8b74-303ecab88e3d" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/../config.properties" beforeDir="false" afterPath="$PROJECT_DIR$/../config.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/userAlias_jar/userAlias.jar" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/userAlias_jar/userAlias.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/tk/barrydegraaff/userAlias/userAlias.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/tk/barrydegraaff/userAlias/userAlias.java" afterDir="false" />
-    </list>
+    <list default="true" id="7a14ed73-6c4d-43a0-8b74-303ecab88e3d" name="Default Changelist" comment="" />
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -72,7 +67,7 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/tk/barrydegraaff/userAlias/userAlias.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="671">
+            <state relative-caret-position="-1993">
               <caret line="112" column="61" selection-start-line="112" selection-start-column="61" selection-end-line="112" selection-end-column="61" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -249,7 +244,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/tk/barrydegraaff/userAlias/userAlias.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="671">
+        <state relative-caret-position="-1993">
           <caret line="112" column="61" selection-start-line="112" selection-start-column="61" selection-end-line="112" selection-end-column="61" />
           <folding>
             <element signature="imports" expanded="true" />
