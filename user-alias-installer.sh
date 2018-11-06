@@ -47,7 +47,7 @@ User Alias Extension installed successful
 To activate your configuration, run as zimbra user:
 su - zimbra -c \"zmmailboxdctl restart\"
 
-You must set-up your permissions in /opt/zimbra/lib/ext/user-alias/config.properties or this extension won't do much.
+You must set-up your permissions in /opt/zimbra/lib/ext/userAlias/config.properties or this extension won't do much.
 
 Please deploy the Zimlet yourself:
     cd /tmp
