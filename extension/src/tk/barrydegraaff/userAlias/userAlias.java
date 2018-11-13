@@ -217,8 +217,6 @@ public class userAlias extends DocumentHandler {
             Properties prop = new Properties();
             prop.load(input);
 
-            String aliasLimit = prop.getProperty("aliasLimit");
-
             String[] allowedByCOS = new String[0];
             try {
                 allowedByCOS = prop.getProperty(cos).split(",");
@@ -235,6 +233,17 @@ public class userAlias extends DocumentHandler {
             try {
                 allowedByDomain = prop.getProperty(getDomainByEmail(username)).split(",");
             } catch (Exception e) {
+            }
+
+            String limitByDomain;
+            String aliasLimit=null;
+            try {
+                limitByDomain = prop.getProperty("aliasLimit-" + getDomainByEmail(username));
+                aliasLimit = limitByDomain;
+            } catch (Exception e) {
+            }
+            if(aliasLimit==null) {
+               aliasLimit = prop.getProperty("aliasLimit");
             }
 
             return aliasLimit + "," + String.join(",", allowedByCOS) + "," + String.join(",", allowedByDomain) + "," + String.join(",", allowedByUsernameDomains);

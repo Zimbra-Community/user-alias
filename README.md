@@ -12,6 +12,7 @@ With this extension you can allow a user, users in a cos or users in a domain to
 After running the installer, you must assign rights in `/opt/zimbra/lib/ext/userAlias/config.properties`, example:
 
     aliasLimit=10
+    aliasLimit-barrydegraaff.tk=1010    
     allowUser=admin@zimbradev.barrydegraaff.tk
     allowUserDomains=allowdomainX.com,allowdomainP.com
     default=allowdomainX.com,allowdomainY.com,example.com,barrydegraaff.tk
@@ -27,4 +28,4 @@ So for the user admin@zimbradev.barrydegraaff.tk who is in the `defaul`t cos, th
 
 allowUser and allowUserDomains: allows admin@zimbradev.barrydegraaff.tk to create/remove alias in allowdomainX.com,allowdomainP.com. admin@zimbradev.barrydegraaff.tk can also create/remove alias in example.com,barrydegraaff.tk because of the domain (zimbradev.barrydegraaff.tk) and also create/remove alias in allowdomainX.com,allowdomainY.com,example.com,barrydegraaff.tk because the admin@zimbradev.barrydegraaff.tk is in default cos.
 
-The aliasLimit applies to all users, using this extension.
+You can define a maximum number of Alias for each domain, aliasLimit applies to all users that do not have a per-domain Limit.
