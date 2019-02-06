@@ -51,7 +51,7 @@ You must set-up your permissions in /opt/zimbra/lib/ext/userAlias/config.propert
 
 Please deploy the Zimlet yourself:
     cd /tmp
-    wget --no-cache https://github.com/Zimbra-Community/user-alias/releases/download/0.0.1/tk_barrydegraaff_useralias.zip -O /tmp/tk_barrydegraaff_useralias.zip
+    wget --no-cache https://github.com/Zimbra-Community/user-alias/releases/download/0.0.2/tk_barrydegraaff_useralias.zip -O /tmp/tk_barrydegraaff_useralias.zip
     su zimbra
     
     cd /tmp

@@ -1,5 +1,10 @@
 # Zimbra User Alias
-With this extension you can allow a user, users in a cos or users in a domain to create Alias on their own account. For Zimbra 8.7.11 and above only. When adding/removing Alias, the Zimlet will also add/remove personas so the user is good to go!
+With this extension you can allow a user, users in a cos or users in a domain to create Alias on their own account. For Zimbra 8.8.11 and above only. When adding/removing Alias, the Zimlet will also add/remove personas so the user is good to go!
+
+If you find Zimbra User Alias useful and want to support its continued development, you can make donations via:
+- PayPal: info@barrydegraaff.tk
+- Bank transfer: IBAN NL55ABNA0623226413 ; BIC ABNANL2A
+
 
 ![Screenshot](https://raw.githubusercontent.com/Zimbra-Community/user-alias/master/documentation/screenshot.png)
 
@@ -29,3 +34,23 @@ So for the user admin@zimbradev.barrydegraaff.tk who is in the `defaul`t cos, th
 allowUser and allowUserDomains: allows admin@zimbradev.barrydegraaff.tk to create/remove alias in allowdomainX.com,allowdomainP.com. admin@zimbradev.barrydegraaff.tk can also create/remove alias in example.com,barrydegraaff.tk because of the domain (zimbradev.barrydegraaff.tk) and also create/remove alias in allowdomainX.com,allowdomainY.com,example.com,barrydegraaff.tk because the admin@zimbradev.barrydegraaff.tk is in default cos.
 
 You can define a maximum number of Alias for each domain, aliasLimit applies to all users that do not have a per-domain Limit.
+
+
+========================================================================
+
+### License
+
+Copyright (C) 2018-2019  Barry de Graaff A [Zeta Alliance](https://zetalliance.org/) Zimlet
+
+This program is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with this program.  If not, see http://www.gnu.org/licenses/.

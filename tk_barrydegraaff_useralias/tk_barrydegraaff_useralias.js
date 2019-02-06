@@ -1,5 +1,5 @@
 /*
-Copyright (C) 2017-2018  Barry de Graaff
+Copyright (C) 2017-2019  Barry de Graaff
 
 This program is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
@@ -77,7 +77,11 @@ UserAliasZimletPrefs = function(shell, section, controller, handler) {
       document.getElementById('zb__PREF__SAVE').style='display:block';
       return;
    };
-   this.resetSize = function(){return;};
+   this.resetSize = function()   
+   {       
+      var zimletInstance = appCtxt._zimletMgr.getZimletByName('tk_barrydegraaff_useralias').handlerObject;
+      zimletInstance.resize();      
+   };
    this.setVisible = function(){return;};
    
    this.showMe = function()
@@ -92,6 +96,23 @@ UserAliasZimletPrefs = function(shell, section, controller, handler) {
    this._handler = handler;
    ZmPreferencesPage.call(this, shell, section, controller);
 };
+
+UserAliasZimlet.prototype.resize = function()
+{
+   try {
+      if(appCtxt.getCurrentView().getActiveView()._section.id == 'USERALIAS_PREFERENCES')
+      {
+         document.title = "Zimbra: " + ZmMsg.preferences +": Alias";
+         var zimletInstance = appCtxt._zimletMgr.getZimletByName('tk_barrydegraaff_useralias').handlerObject;
+         zimletInstance.appHeight = (Math.max( document.body.scrollHeight, document.body.offsetHeight, document.documentElement.clientHeight, document.documentElement.scrollHeight, document.documentElement.offsetHeight )-110 );         
+         document.getElementById('tk_barrydegraaff_useralias_prefscreen').style='display:block; overflow-y: auto !important; max-height:'+zimletInstance.appHeight+'px !important';
+      }
+   }
+   catch(err)   
+   {
+   }
+   return;
+}; 
 
 UserAliasZimlet.prototype.showMeImpl = function()
 {

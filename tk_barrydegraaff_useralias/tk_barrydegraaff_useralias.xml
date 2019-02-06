@@ -1,5 +1,5 @@
 <zimlet name="tk_barrydegraaff_useralias"
-        version="0.0.1"
+        version="0.0.2"
         target="main compose-window view-window"
         label="User Alias"
         description="Allows end-user to create email alias.">
