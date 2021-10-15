@@ -1,11 +1,6 @@
 # Zimbra User Alias
 With this extension you can allow a user, users in a cos or users in a domain to create Alias on their own account. For Zimbra 8.8.11 and above only. When adding/removing Alias, the Zimlet will also add/remove personas so the user is good to go!
 
-If you find Zimbra User Alias useful and want to support its continued development, you can make donations via:
-- PayPal: info@barrydegraaff.tk
-- Bank transfer: IBAN NL55ABNA0623226413 ; BIC ABNANL2A
-
-
 ![Screenshot](https://raw.githubusercontent.com/Zimbra-Community/user-alias/master/documentation/screenshot.png)
 
 ### Installation
@@ -40,7 +35,7 @@ You can define a maximum number of Alias for each domain, aliasLimit applies to 
 
 ### License
 
-Copyright (C) 2018-2019  Barry de Graaff A [Zeta Alliance](https://zetalliance.org/) Zimlet
+Copyright (C) 2018-2021  Barry de Graaff A [Zeta Alliance](https://zetalliance.org/) Zimlet
 
 This program is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
